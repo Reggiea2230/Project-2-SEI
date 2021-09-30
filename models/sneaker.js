@@ -2,6 +2,14 @@ const mongoose = require('mongoose');
 
 // Create your User Model
 
+
+const inventorySchema = new mongoose.Schema({
+    itemId: String,
+    itemName: String,
+    itemPrice: Number,
+    itemDesc: String
+})
+
 const checkoutSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -15,7 +23,8 @@ const paywallSchema = new moogoose.Schema({
     ccv: Number,
     checkbox: Boolean,
     checkout: [checkoutSchema],
-    googleId: String
+    inventory: [inventorySchema],
+    nikeUserSchema: [nikeUserSchema]
 });
 
 module.exports = mongoose.model('Paywall', paywallSchema);
