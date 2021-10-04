@@ -17,12 +17,12 @@ const sneakerSchema = new mongoose.Schema({
     avaliable: Boolean,
     location: String,
     review: [reviewSchema],
-    addSneaker:[{type: mongoose.Schema.Types.ObjectId, ref: 'KickUser'}]
+    sneakerUser:[{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 });
 
 
 
-module.exports = mongoose.model('Sneaks', sneakerSchema);
+module.exports = mongoose.model('Sneaker', sneakerSchema);
 
 
 
