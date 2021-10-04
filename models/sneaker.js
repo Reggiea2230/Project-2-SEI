@@ -3,22 +3,35 @@ const mongoose = require('mongoose');
 // Create your User Model
 
 
-const inventorySchema = new mongoose.Schema({
-    itemId: String,
-    itemName: String,
-    itemPrice: Number,
-    itemDesc: String,
-    quNum: Number
+const fashoReviewSchema = new mongoose.Schema({
+    fashoName: String,
+    descrip: String,
+    rating: Number
 })
 
 
-const checkoutSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    address: String,
-    phone : Number,
-    inventory: [inventorySchema]
+const sneaksSchema = new mongoose.Schema({
+    kicks: String,
+    slug: String,
+    history: String,
+    brand: String,
+    locations: String,
+    review: [fashoReviewSchema]
 });
+
+
+
+module.exports = mongoose.model('Sneaks', sneaksSchema);
+
+
+
+
+
+
+
+
+
+//later Use for PayWall Schema
 
 // const paywallSchema = new mongoose.Schema({
 //     card: Number,
@@ -28,5 +41,3 @@ const checkoutSchema = new mongoose.Schema({
 //     checkout: [checkoutSchema],
 //     inventory: [inventorySchema],
 // });
-
-module.exports = mongoose.model('Checkout', checkoutSchema);

@@ -1,0 +1,31 @@
+<section id="show-page">  
+    <div>Air Force Ones</div>
+      <div><%= <section id="show-page">  
+  <div>Sneaker:</div>
+    <div><%= revsnk.revsnk %></div>
+    <div>Kicks:</div>
+    <div><%= revsnk.kicks %></div>
+    <div>Brand:</div>
+    <div><%= revsnk.brand %></div>
+    <div>History:</div>
+    <div><%= revsnk.history %></div>
+  </section>
+  
+  <br><br>
+  <h2>What do you think of these Kicks?</h2>
+  <form
+    id="add-review-form"
+    method="POST"
+    action="/sneakers/<%= revsnk._id %>/nikeRevUser">
+    <label>Review:</label>
+    <textarea name="descrip"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Review" />
+  </form>
