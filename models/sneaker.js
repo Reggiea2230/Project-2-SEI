@@ -3,41 +3,26 @@ const mongoose = require('mongoose');
 // Create your User Model
 
 
-const fashoReviewSchema = new mongoose.Schema({
-    fashoName: String,
+const reviewSchema = new mongoose.Schema({
     descrip: String,
-    rating: Number
-})
+    rating: {type: Number, min: 1, max: 5, default: 5}
+}, {
+    timestamps: true
+});
 
 
-const sneaksSchema = new mongoose.Schema({
+const sneakerSchema = new mongoose.Schema({
     kicks: String,
-    slug: String,
-    history: String,
-    brand: String,
-    locations: String,
-    review: [fashoReviewSchema]
+    releaseYear: String,
+    avaliable: Boolean,
+    location: String,
+    review: [reviewSchema],
+    addSneaker:[{type: mongoose.Schema.Types.ObjectId, ref: 'KickUser'}]
 });
 
 
 
-module.exports = mongoose.model('Sneaks', sneaksSchema);
+module.exports = mongoose.model('Sneaks', sneakerSchema);
 
 
 
-
-
-
-
-
-
-//later Use for PayWall Schema
-
-// const paywallSchema = new mongoose.Schema({
-//     card: Number,
-//     exp: Number,
-//     ccv: Number,
-//     checkbox: Boolean,
-//     checkout: [checkoutSchema],
-//     inventory: [inventorySchema],
-// });
