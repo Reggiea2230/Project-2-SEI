@@ -17,7 +17,7 @@ const sneakerSchema = new mongoose.Schema({
     avaliable: Boolean,
     location: String,
     review: [reviewSchema],
-    sneakerUser: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+    userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
 
