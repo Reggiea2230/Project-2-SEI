@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
     descrip: String,
-    rating: {type: Number, min: 1, max: 5, default: 5}
+    rating: {type: Number, min: 1, max: 5, default: 5},
+    userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 }, {
     timestamps: true
 });
@@ -17,7 +18,8 @@ const sneakerSchema = new mongoose.Schema({
     avaliable: Boolean,
     location: String,
     review: [reviewSchema],
-    userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+    sneakerUser: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    
 });
 
 
