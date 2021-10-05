@@ -16,7 +16,7 @@ const sneakerSchema = new mongoose.Schema({
     kicks: String,
     releaseYear: String,
     avaliable: Boolean,
-    location: String,
+    history: String,
     review: [reviewSchema],
     sneakerUser: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     

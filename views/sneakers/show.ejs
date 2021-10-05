@@ -1,14 +1,14 @@
-<section id="show-page">  
+<section>  
     <div>Air Force Ones</div>
-      <div><%= <section id="show-page">  
-  <div>Sneaker:</div>
-    <div><%= revsnk.revsnk %></div>
-    <div>Kicks:</div>
-    <div><%= revsnk.kicks %></div>
-    <div>Brand:</div>
-    <div><%= revsnk.brand %></div>
+      <div><%= <section>  
+  <div>Kicks:</div>
+    <div><%= sneaker.kicks %></div>
+    <div>Release Year:</div>
+    <div><%= sneaker.releaseYear %></div>
+    <div>Avaliable:</div>
+    <div><%= sneaker.avaliable%></div>
     <div>History:</div>
-    <div><%= revsnk.history %></div>
+    <div><%= sneaker.history %></div>
   </section>
   
   <br><br>
@@ -16,7 +16,7 @@
   <form
     id="add-review-form"
     method="POST"
-    action="/sneakers/<%= revsnk._id %>/nikeRevUser">
+    action="/sneakers/<%= sneaker._id %>/review">
     <label>Review:</label>
     <textarea name="descrip"></textarea>
     <label>Rating:</label>

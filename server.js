@@ -20,8 +20,8 @@ require('./config/passport');
 
 //require our routes
 var indexRoutes = require('./routes/index');
-var adidasRoutes = require('./routes/adidas');
-var nikeRevRoutes = require('./routes/nikeRevUser');
+var kickRoutes = require('./routes/kick');
+var reviewRoutes = require('./routes/review');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -53,8 +53,8 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-app.use('/adidas', adidasRoutes);
-app.use('/', nikeRevUsersRoutes);
+app.use('/kick', kickRoutes);
+app.use('/', reviewRoutes);
 
 
 // invalid request, send 404 page

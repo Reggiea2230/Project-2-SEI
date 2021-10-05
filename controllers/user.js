@@ -1,4 +1,4 @@
-const Sneaks = require('../models/nikeUser');
+const Sneaks = require('../models/user');
 
 module.exports ={
     index,
@@ -10,7 +10,7 @@ function knowled(req, res){
    // req.user is a mongoose document
    // where did we assign the mongoose document to req.user
   req.user.save(function(err){
-    res.redirect('/nikeUser')
+    res.redirect('/user')
   })
 }
 
@@ -20,11 +20,11 @@ function index(req, res, next) {
     console.log(req.user)
     let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
     let sortKey = req.query.sort || 'name';
-    NikeUser.find(modelQuery)
-    .sort(sortKey).exec(function(err, nikeUsers) {
+    Sneaks.find(modelQuery)
+    .sort(sortKey).exec(function(err, sneak) {
       if (err) return next(err);
-      res.render('views/index', {
-        nikeUsers,
+      res.render('sneak/index', {
+        sneak,
         user: req.user,
         name: req.query.name,
         sortKey

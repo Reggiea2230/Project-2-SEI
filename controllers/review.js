@@ -1,4 +1,4 @@
-const RevSnk = require("../models/sneaker");
+const Lace = require("../models/sneaker");
 
 module.exports = {
     create
@@ -6,14 +6,14 @@ module.exports = {
 
 function create (req, res) {
     console.log(req.body)
-    RevSnk.findById(req.params.id, function(err, revsnk){
+    Lace.findById(req.params.id, function(err, lace){
         if(err){
             console.log(err)
             res.send(err)
         }
-        console.log(revsnk)
-        revsnk.review.push(req.body);
-        revsnk.save(function(err){
+        console.log(lace)
+        lace.review.push(req.body);
+        lace.save(function(err){
             res.redirect(`/sneakers/${req.params.id}`)
         })
     })
