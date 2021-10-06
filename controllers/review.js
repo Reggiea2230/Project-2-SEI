@@ -2,7 +2,8 @@ const Sneaker = require("../models/sneaker");
 
 module.exports = {
     create,
-    delete: deleteReviews
+    delete: deleteReviews,
+    update: updateReviews
 };
 
 function create (req, res) {
@@ -33,3 +34,15 @@ function deleteReviews(req, res) {
       });
     });
   }
+
+  function updateReviews(req, res){
+    Sneaker.findOne({'review._id': req.params.id}, function(err, sneaker){
+        const reviewSubdoc = sneaker.review.id(req.params.id);
+        if(!reviewSubdoc.userId.equals(req.user._id)) return res.redirect(`/sneakers/${sneaker._id}`);
+        reviewSubdoc.descrip = req.body.descrip;
+        reviewSubdoc.rating = parseInt(req.body.rating);
+        sneaker.save(function(err){
+            res.redirect(`/sneakers/${sneaker._id}`);
+        });
+    });
+}
