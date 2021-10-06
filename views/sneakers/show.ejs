@@ -9,7 +9,7 @@
 <body>
   <section>  
     <div>
-      <a href="/sneakers/show">
+      <a href="/">
       Back
       </a>
     </div>
@@ -68,6 +68,39 @@
   <% } else { %>
     <h5>No Reviews Yet</h5>
   
-    <% } %>
+<% } %>
+
+<% sneaker.review.forEach(function(r) { %> 
+  <div>
+    <%= r.descrip %>
+    <%= r.rating %>
+    <form action="/review/<%= r._id %>?_method=DELETE" method="POST">
+        <button type="submit">X</button>
+      </form>
+      <% }) %>
+  </div>
+
+
+<% sneaker.review.forEach(function(r){ %> 
+  <div>
+    <input type="text" 
+      name="descrip" 
+      value="<%= r.descrip %>"
+    >
+    <select name="rating" 
+      value='<%= r.rating %>'
+      >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <form action="/review/<%= r._id %>?_method=PUT"    method="POST">
+      <button type='submit'>Update Comment</button>
+    </form>
+  </div>
+
+<% }) %>    
 </body>
 </html>
