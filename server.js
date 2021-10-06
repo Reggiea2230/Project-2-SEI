@@ -20,7 +20,7 @@ require('./config/passport');
 
 //require our routes
 var indexRoutes = require('./routes/index');
-var kickRoutes = require('./routes/kick');
+var sneakerRoutes = require('./routes/sneaker');
 var reviewRoutes = require('./routes/review');
 
 // view engine setup
@@ -53,7 +53,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-app.use('/kick', kickRoutes);
+app.use('/sneakers', sneakerRoutes);
 app.use('/', reviewRoutes);
 
 
