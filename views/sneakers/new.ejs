@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css'/>
-    <title>List Of Sneakers</title>
+    <title>Favorite Sneaker</title>
 </head>
 <body>
     <h2>Enter Your Favorite Sneaker</h2>
-<form action="/sneakers" method="POST">
+<form action="/sneakers/show" method="POST">
   <label>Sneaker Name:
     <input type="text" name="kicks">
-  </label><br>
+  </label>
+  <br>
   <label>Release Year:
     <input type="text" name="releaseYear">
-  </label><br>
+  </label>
+  <br>
   <label>Sneaker Rating:
     <select name="rating">
       <option value="1">1</option>
@@ -24,6 +26,7 @@
       <option value="4">4</option>
     </select>
   </label>
+  <br>
   <input type="submit" value="Add Sneaker">
 </form>
 </body>

@@ -1,11 +1,11 @@
-const sneaker = require('../models/sneaker');
 const Sneaker = require('../models/sneaker');
 
 module.exports = {
-   index,
+    index,
     show,
     new: newSneaker,
-    create
+    create,
+    delete: deleteSneaker
 };
 
 function index(req, res){
@@ -22,10 +22,12 @@ function index(req, res){
 function show(req, res){
     Sneaker.findById(req.params.id, function(err, sneaker){
 
-        res.render('sneakers/show', {
+        res.render("sneakers/show", {
             sneaker: sneaker,
             id: req.params.id
-       }); 
+           
+       });
+       
     }); 
     // res.send('this page is working');
 }
@@ -38,9 +40,18 @@ function create(req, res){
     const sneaker = new sneaker(req.body);
     sneaker.save(function(err){
         if (err) return res.render('sneakers/new');
-        console.log(sneaker)
+        
 
-        res.redirect('/sneakers/new')
+        res.redirect('/sneakers/show')
     })
 
+}
+
+function deleteSneaker(req, res){
+    Sneaker.findOneAndDelete(
+        {_id: req.params.id, userRecommending: req.user._id}, function(err){
+            res.redirect('/sneakers/show')
+        }
+
+    );
 }

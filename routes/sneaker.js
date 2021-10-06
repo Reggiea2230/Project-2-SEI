@@ -7,5 +7,7 @@ var shoeCtrl = require('../controllers/sneaker');
 router.get('/', shoeCtrl.index);
 router.get('/new', shoeCtrl.new);
 router.get('/:id', shoeCtrl.show);
+router.post('/', shoeCtrl.create);
+router.delete('/new/:id', shoeCtrl.delete);
 
 module.exports = router;
