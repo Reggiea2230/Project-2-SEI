@@ -12,7 +12,8 @@ function index(req, res){
     Sneaker.find({}, function(err, sneakerDocuments){
         console.log(sneakerDocuments, "Sneaker Document right here")
     res.render('sneakers/index', {
-       sneaker: sneakerDocuments
+       sneaker: sneakerDocuments,
+       id: req.params.id
         
     
         });
@@ -21,15 +22,14 @@ function index(req, res){
 
 function show(req, res){
     Sneaker.findById(req.params.id, function(err, sneaker){
-
+        console.log(sneaker);
         res.render("sneakers/show", {
-            sneaker: sneaker,
-            id: req.params.id
-           
+            sneaker: sneaker // <--- sneaker is the key and its going to be variable on the show page
+                            // sneaker is the document to the right
        });
        
     }); 
-    // res.send('this page is working');
+
 }
 
 function newSneaker(req, res) {
@@ -37,12 +37,15 @@ function newSneaker(req, res) {
   }
 
 function create(req, res){
-    const sneaker = new sneaker(req.body);
+    const sneaker = new Sneaker(req.body); // new Sneaker is creating a document in the database
+    
     sneaker.save(function(err){
-        if (err) return res.render('sneakers/new');
+        console.log(err, " <---- error");
+        if (err) return res.redirect('/sneakers/new');
         
+        console.log(sneaker) //<--- sneaker is document in the database 
 
-        res.redirect('/sneakers/show')
+        res.redirect(`/sneakers/${sneaker._id}`);
     })
 
 }

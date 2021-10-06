@@ -9,11 +9,11 @@
 <body>
   <section>  
     <div>
-      <a href="/sneakers">
+      <a href="/sneakers/show">
       Back
       </a>
     </div>
-        
+
   <div>Kicks:</div>
     <div><%= sneaker.kicks %></div>
     <div>Release Year:</div>
@@ -32,7 +32,7 @@
 
     id="add-review-form"
     method="POST"
-    action="/sneakers/<%= id %>/review">
+    action="/sneakers/<%= sneaker._id %>/review">
 
     <label>Review:</label>
     <textarea name="descrip"></textarea>
@@ -45,6 +45,7 @@
       <option value="5" selected>5</option>
     </select>
     <input type="submit" value="Add Review" />
+
   </form>
 
  <% if (sneaker.review.length) { %>
