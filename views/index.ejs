@@ -3,22 +3,31 @@
 <head>
     <title>Sneaker-Depo</title>
     <!-- Google Icon Fonts used by Materialize -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- Materialize CSS Framework -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <link rel="stylesheet" href="stylesheets/style.css" />
     <!-- JavaScript for Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 </head>
-<body>
-<h1>Sneaker-Past</h1>
-<h3>For Your Sneaker History</h3>
+<section>
+  <h1>Sneaker Knowledge</h1>
+  
+  <h3 id="sh-3H">"For Your Sneaker History"</h3> 
+</section>
+  
+  
+<body id="index-body">
+<div id="topper">
+   
+</div>
+
         <nav>
           <div >
             <ul>
-              <li>
+              <li id="logout">
                 <% if (user) { %>
-                  <a href="/logout">Log Out</a>
+                  <a  href="/logout">Log Out</a>
                 <% } else { %>
                   <a href="/auth/google"> Login with Google</a>
                 <% } %>       
@@ -26,6 +35,7 @@
             </ul>
           </div>
         </nav>
-        <a href="/sneakers/new">Sneakers</a>
+        <div class="bg-image"></div>
 </body>
+<footer>Sneaker Knowledge</footer>
 </html>

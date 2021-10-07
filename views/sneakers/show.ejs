@@ -7,6 +7,13 @@
   <title>Sneaker History</title>
 </head>
 <body>
+  <div>
+    <div>
+      <h3>Air Force One</h3>
+      <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nike.com%2Fair-force-1&psig=AOvVaw0aE5yqvnddGqlWTuV0EeQR&ust=1633710260482000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCID7mpHbuPMCFQAAAAAdAAAAABAE"></a>
+    </div>
+  </div>
+
   <section>  
     <div>
       <a href="/">
@@ -15,13 +22,11 @@
     </div>
 
   <div>Kicks:</div>
+    <div><%= sneaker.userId %> </div>
     <div><%= sneaker.kicks %></div>
     <div>Release Year:</div>
     <div><%= sneaker.releaseYear %></div>
-    <div>Avaliable:</div>
-    <div><%= sneaker.avaliable%></div>
-    <div>History:</div>
-    <div><%= sneaker.history %></div>
+
   </section>
   
   <br><br>
@@ -83,6 +88,7 @@
 
 <% sneaker.review.forEach(function(r){ %> 
   <div>
+    <form action="/review/<%= r._id %>?_method=PUT"    method="POST">
     <input type="text" 
       name="descrip" 
       value="<%= r.descrip %>"
@@ -96,11 +102,12 @@
       <option value="4">4</option>
       <option value="5" selected>5</option>
     </select>
-    <form action="/review/<%= r._id %>?_method=PUT"    method="POST">
+    
       <button type='submit'>Update Comment</button>
     </form>
   </div>
 
 <% }) %>    
 </body>
+<footer>Sneaker Knowledge</footer>
 </html>
