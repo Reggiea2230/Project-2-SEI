@@ -18,5 +18,5 @@ HTML, CSS, JavaScript, Node.js, Express, Mongoose, and  Mongo DB.
 
 # It's Time To Create Your Sneaker
 
-Lets Create:[Sneaker Creator](https://sei-project-2-sneaker-history.herokuapp.com/)
+Lets Create: [Sneaker Creator](https://sei-project-2-sneaker-history.herokuapp.com/)
 
