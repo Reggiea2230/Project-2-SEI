@@ -7,7 +7,7 @@ Sneaker Creator is a "One Stop To Make You Own Sneaker". My love for the sneaker
 
 # Technologies Used:
 
-HTML, CSS, JavaScript, Node.js, Express, Mongoose, and  Mongo DB.
+HTML, CSS, JavaScript, Node.js, Express, Mongoose, Mongo DB, and [Trello](https://trello.com/b/P7yzbLau/project-2-sei)
 
 # Future Enchanemnents
 
