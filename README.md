@@ -9,15 +9,14 @@ Sneaker Creator is a "One Stop To Make You Own Sneaker". My love for the sneaker
 
 HTML, CSS, JavaScript, Node.js, Express, Mongoose, and  Mongo DB.
 
-# It's Time To Create Your Sneaker
-
-Lets Create:[Sneaker Creator](https://sei-project-2-sneaker-history.herokuapp.com/)
-
-
 # Future Enchanemnents
 
 1. Have the end-user the ablitiy to display actual sneaker they created
 2. Get my reviews to inline
 3. Have my logo display
 4. Have inventory of sneakers
-5
+
+# It's Time To Create Your Sneaker
+
+Lets Create:[Sneaker Creator](https://sei-project-2-sneaker-history.herokuapp.com/)
+
