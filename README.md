@@ -14,7 +14,10 @@ HTML, CSS, JavaScript, Node.js, Express, Mongoose, Mongo DB, and [Trello](https:
 1. Have the end-user the ablitiy to display actual sneaker they created
 2. Get my reviews to inline
 3. Have my logo display
-4. Have inventory of sneakers
+4. About me
+5. Have inventory of sneakers
+6. Paywall and Cart page
+
 
 # It's Time To Create Your Sneaker
 
