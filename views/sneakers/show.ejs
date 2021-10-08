@@ -4,44 +4,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sneaker History</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <title>Sneaker Creator</title>
 </head>
-<body>
-  <div>
-    <div>
-      <h3>Air Force One</h3>
-      <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nike.com%2Fair-force-1&psig=AOvVaw0aE5yqvnddGqlWTuV0EeQR&ust=1633710260482000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCID7mpHbuPMCFQAAAAAdAAAAABAE"></a>
-    </div>
-  </div>
+<header>
+  <nav class="topnav">
+    <a href="/sneakers">
+        Back
+        </a>
+        <li class="ig" id="logout">
+          <a class="lg" href="/sneakers">Sneaker Reviews</a> 
+          <% if (user) { %>
+            <a  href="/logout">Log Out</a>
+          <% } else { %>
+            <a href="/auth/google"> Login with Google</a>
+          <% } %>   
+            
+        </li>
+  </nav>
+</header>
 
-  <section>  
-    <div>
-      <a href="/">
-      Back
-      </a>
-    </div>
 
-  <div>Kicks:</div>
-    <div><%= sneaker.userId %> </div>
+<body class="adf">
+  <article>
+    <h1 id="kickers">Sneaker Details</h1>
+    <div id="kkicks">Kicks:</div>
     <div><%= sneaker.kicks %></div>
-    <div>Release Year:</div>
-    <div><%= sneaker.releaseYear %></div>
+    <div id="kkicks">Color Way:</div>
+    <div><%= sneaker.colorWay %> </div>
     <div><%= sneaker.rating %> </div>
-
-  </section>
-  
-  <br><br>
-
-  
+    <br><br>
+  </article>
+  <div class="bg-image"></div>
   <h2>What do you think of these Kicks?</h2>
   <form
-
+    
     id="add-review-form"
     method="POST"
     action="/sneakers/<%= sneaker._id %>/review">
 
-    <label>Review:</label>
+    <label><b>Review:</label>
     <textarea name="descrip"></textarea>
+    <br>
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -53,7 +60,7 @@
     <input type="submit" value="Add Review" />
 
   </form>
-
+<div class="dru">
  <% if (sneaker.review.length) { %>
     <table>
       <thead>
@@ -63,12 +70,12 @@
           <th>User</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="adf">
         <% sneaker.review.forEach(function(s) { %>
           <tr>
-            <td><%= s.descrip %></td>
-            <td><%= s.rating %></td>
-            <td><%= s.userId %> </td>
+            <td colspan="2"><%= s.descrip %></td>
+            <td colspan=""><%= s.rating %></td>
+            <td colspan="1"><%= s.userId %> </td>
           </tr>
         <% }); %>
       </tbody>
@@ -79,18 +86,18 @@
 <% } %>
 
 <% sneaker.review.forEach(function(r) { %> 
-  <div>
+  
     <%= r.descrip %>
     <%= r.rating %>
     <form action="/review/<%= r._id %>?_method=DELETE" method="POST">
         <button type="submit">X</button>
       </form>
       <% }) %>
-  </div>
 
+      
 
 <% sneaker.review.forEach(function(r){ %> 
-  <div>
+ 
     <form action="/review/<%= r._id %>?_method=PUT"    method="POST">
     <input type="text" 
       name="descrip" 
@@ -108,9 +115,13 @@
     
       <button type='submit'>Update Comment</button>
     </form>
-  </div>
+</div>
 
 <% }) %>    
+
 </body>
-<footer>Sneaker Knowledge</footer>
+
+<footer>
+   <h4>Sneaker Creator</h4> 
+</footer>
 </html>

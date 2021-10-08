@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const reviewSchema = new mongoose.Schema({
     name: String,
     descrip: String,
-    rating: {type: Number, min: 1, max: 5, default: 5},
+    rating: {type: Number, min: 1, max: 12, default: 12},
     userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 }, {
     timestamps: true
@@ -15,9 +15,7 @@ const reviewSchema = new mongoose.Schema({
 
 const sneakerSchema = new mongoose.Schema({
     kicks: String,
-    releaseYear: String,
-    avaliable: Boolean,
-    history: String,
+    colorWay: String,
     review: [reviewSchema],
     userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     

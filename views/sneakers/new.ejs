@@ -4,36 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css'/>
-    <title>Favorite Sneaker</title>
+    <title>Sneaker Creator</title>
 </head>
-<body>
-  <div>
-    <h1>Air Force One<h1>
-
-  </div>
-    
-    <h2>Enter Your Favorite Sneaker</h2>
+<nav class="topnav">
+  <a id="casa" href="/">Home</a>
+  <a href="/sneakers">Return to Reviews</a>
+  <li class="ig" id="logout">
+    <% if (user) { %>
+      <a  href="/logout">Log Out</a>
+    <% } else { %>
+      <a href="/auth/google"> Login with Google</a>
+    <% } %>   
+      
+  </li>
+</nav>
+<body id ="newBody">
+    <h2 id ="newBodyOne">Create Your Sneaker:</h2>
 <form action="/sneakers" method="POST">
-  <label>Sneaker Name:
+  <label id ="newBodyTwo">Sneaker Name:
     <input type="text" name="kicks">
   </label>
   <br>
-  <label>Release Year:
-    <input type="text" name="releaseYear">
+  <label id ="newBodyTwo">Colorway:
+    <input type="text" name="colorWay">
   </label>
   <br>
-  <label>Sneaker Rating:
+  <label id ="newBodyTwo">Sneaker Size:
     <select name="rating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="5.5">5.5</option>
+      <option value="6">6</option>
+      <option value="6.5">6.5</option>
+      <option value="7">7</option>
+      <option value="7.5">7.5</option>
+      <option value="8">8</option>
+      <option value="8.5">8.5</option>
+      <option value="9">9</option>
+      <option value="9.5">9.5</option>
+      <option value="10">10</option>
+      <option value="10.5">10.5</option>
+      <option value="11">11</option>
+      <option value="11.5">11.5</option>
     </select>
   </label>
   <br>
-  <input type="submit" value="Add Sneaker">
+  <input id ="newBodyThree" type="submit" value="Add Sneaker">
+  
 </form>
+<div class="bg-image"></div>
 </body>
-<footer>Sneaker Knowledge</footer>
+<footer>
+  <h4>Sneaker Creator</h4> 
+ </footer>
 </html>

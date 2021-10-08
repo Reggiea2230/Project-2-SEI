@@ -4,20 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sneakers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+    <title>Sneaker Creator</title>
 </head>
-<body>
+<header>
+    <nav class="topnav">
+        <a href="/">Home</a>
+        <a href="/sneakers/new"> Create Your Own Sneaker </a>
+        <li class="ig" id="logout">
+            <a class="lg" href="/sneakers">Sneaker Reviews</a> 
+            <% if (user) { %>
+            <a  href="/logout">Log Out</a>
+            <% } else { %>
+            <a href="/auth/google"> Login with Google</a>
+            <% } %>   
+            
+        </li>
+    </nav>
+</header>
+
+<body class="bodyCsColor"> 
+    <h1 id ="cs">Created Sneakers</h1>
     <% sneaker.forEach(function(s) { %> 
-        <nav> 
+        <div id="csDiv"> 
             <h1>
-                <%= s.sneaker %> 
+                <%= s.kicks %> 
             </h1>
-            <a href="/sneakers/<%= s._id %> ">
-                Sneaker
+            <a id="sd" href="/sneakers/<%= s._id %> ">
+                Sneaker Details
             </a>
-        </nav>
+        </div>
     <% }); %> 
-<a href="/sneakers/new">Sneakers</a>
+    <a class="bg-image" href="" ></div>
 </body>
-<footer>Sneaker Knowledge</footer>
+<footer>
+    <h4>Sneaker Creator</h4> 
+</footer>
 </html>
