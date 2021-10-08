@@ -19,7 +19,7 @@ HTML, CSS, JavaScript, Node.js, Express, Mongoose, Mongo DB, and [Trello](https:
 6. Paywall and Cart page
 
 
-# It's Time To Create Your Sneaker
+# It's Time To Create Your Sneaker Idea
 
 Lets Create: [Sneaker Creator](https://sei-project-2-sneaker-history.herokuapp.com/)
 
